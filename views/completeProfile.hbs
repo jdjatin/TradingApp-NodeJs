@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{!-- <style>
+         #complete-profile{padding:var(--main-pad);}    
+.content .profile-list{width:20%;flex-direction: column;margin-bottom:0rem;}
+#complete-profile .content{display:flex;padding:var(--main-pad);justify-content: space-between;}
+#complete-profile .content .text-content{width:70%;height:auto;position: relative;padding: 1rem 2rem 2rem 2rem;}
+#complete-profile .content .list label {
+    cursor: pointer;
+    height: 60px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 10;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display:flex;
+    align-items:center ;
+    justify-content: center;
+    }
+    #complete-profile .content .list label span{text-align: center;}
+    #complete-profile .content .list label:last-child {
+        margin-bottom:0rem;}
+    #complete-profile .text p  ,  #complete-profile .text label{font-size:16px;}
+    #complete-profile .text span{color:#5c5a5a;font-size:12px;position: absolute;bottom:1rem;}
+    #complete-profile .text span i{padding-right:10px;}
+    .content .text-content .email{
+        display: block;
+    }
+      
+    #email:checked ~ .text-content .email,
+    #phone:checked ~ .text-content .phone,
+    #information:checked ~ .text-content .information,
+    #economic:checked ~ .text-content .economic,
+    #verify:checked ~ .text-content .verify{
+        display: block;
+    }
+    
+      
+    #phone:checked ~ .text-content .email,
+    #information:checked ~ .text-content .email,
+    #economic:checked ~ .text-content .email,
+    #verify:checked ~ .text-content .email{
+        display: none;
+    }
+
+    #complete-profile .content .text-content input,#complete-profile .content .text-content select{display:block;width:80%;padding:5px;border-radius: 5px;border: 1px solid #f5f5f5;}
+    #complete-profile .content .text-content .phone>div{padding:1rem 0rem;} 
+    .check{display:flex;column-gap:10px;padding: 5px 0;} 
+    #complete-profile .content .text-content .check input{width:5%;margin:5px 0;}
+    #complete-profile .content .text-content .phone>div a, #complete-profile .information form a, #complete-profile .email  a,#complete-profile .economic  a,#complete-profile .verify  a{margin:1rem 0rem;float:right;}
+    #complete-profile .information form>div, #complete-profile .verify form>div{padding:0.5rem 0rem;}
+    #complete-profile  .information.text form span,  #complete-profile  .verify.text form span {
+        position: unset;}
+    #complete-profile .check p {
+        font-size: 14px;
+    }
+    .economic.text>div{padding:0.5rem 0rem;}
+    .do-dont{display:flex;justify-content: space-between;flex-wrap: wrap;}
+    .do-dont>div{width:49%;padding:1rem 0rem;}
+    .do-dont>div img{width:100%}
+    .do-dont>div ul {margin-left: 1rem;}
+    .do-dont>div ul li{font-size:14px;}
+    .do{font-size:18px;color:green;}
+    .dont{font-size:18px;color:red;}
+    .upload-btn-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width:100%;
+    }
+    
+    .btn-upld {
+      border: 2px solid gray;
+      color: gray;
+      background-color: white;
+      padding: 8px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      width:100%;
+    }
+    .btn-upld i{color:#1971e9f2;font-size:50px;padding-bottom:1rem;}
+    .upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position:absolute;
+      top:0;
+      opacity:0;
+    }
+    </style> --}}
+    <title>MT5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+	  <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+
+  </head>
+
+<body>
+
+  <header class="header">
+    <nav>
+      <div class="logo"><img src="/images/animated_logo.gif"></a>
+      </div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Trading</a></li>
+        <li><a href="#">Platforms</a></li>
+        <li><a href="#">Tools</a></li>
+        <li><a href="#" class="black-btn white-br-btn">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+  <main >
+    <section id="complete-profile">
+      <div class="title"><p>There are few more steps to trade</p></div>
+      <div class="content">
+        <input type="radio" name="slider" checked id="email">
+        <input type="radio" name="slider" id="phone">
+        <input type="radio" name="slider" id="information">
+        <input type="radio" name="slider" id="economic">
+        <input type="radio" name="slider" id="verify">
+
+
+        <div class="list profile-list">
+            {{!-- <label for="email" class="email">
+                <span>Verify Email</span>
+            </label> --}}
+            <label for="phone" class="phone">
+                <span>Verify Phone</span>
+            </label>
+            <label for="information" class="information">
+                <span>Personal Information</span>
+            </label>
+            <label for="economic" class="economic">
+              <span>Economic Profile</span>
+            </label>
+            <label for="verify" class="verify">
+                <span>Verify Documents</span>
+            </label>
+           
+           
+        </div>
+
+        <div class="text-content">
+            <!-- email tab -->
+            {{!-- <div class="email text">
+                <div class="title"><h3>Verify Email</h3> </div>
+                <p>We will send the verification code to na···or@masterinfotech.com.</p>
+                <a href="" class="black-btn">Send me a code</a>
+                <span><i class="fa fa-solid fa-lock"></i>All data is encrypted</span>
+                
+                  
+                  
+            </div> --}}
+            <!-- phone tab -->
+            <div class="phone text">
+                <div class="title"><h3>Enter your phone number</h3></div>
+              
+                <div>
+                  <label>Phone number</label>
+                  <input type="number" placeholder="enter phone number">
+                </div>
+                <div>
+                  <p>How would you like to receive your confirmation code</p>
+                  <div class="check">
+                    <input type="checkbox"><label>SMS</label>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox"><label>Phone call</label>
+
+                  </div>
+                  <a href="" class="black-btn">Continue</a>
+                </div>
+                <span><i class="fa fa-solid fa-lock"></i>All data is encrypted</span>
+                
+            </div>
+            <!-- information tab -->
+            <div class="information text">
+                <div class="title"><h3>Add Profile Information</h3></div>
+                <form>
+                  <div>
+                    <label>First Name</label>
+                    <input type="text">
+                    <span>Given first name as it appears on your identification.</span>
+                  </div>
+                  <div>
+                    <label>Last Name</label>
+                    <input type="text">
+                    <span>Given last name as it appears on your identification.</span>
+                  </div>
+                  <div>
+                    <label>Date of Birth</label>
+                    <input type="date">
+                  
+                  </div>
+                  <div>
+                    <label>Address</label>
+                    <input type="text">
+                    <span>House no.(apartment),street,city</span>
+                  </div>
+                  <div>
+                    <label>Gender</label>
+                    <div class="check">
+                      <input type="checkbox" id="Check1" value="Value1" onclick="selectOnlyThis(this.id)" ><p>Male</p>
+  
+                    </div>
+                    <div class="check">
+                      <input type="checkbox" id="Check2" value="Value2" onclick="selectOnlyThis(this.id)" ><p>Female</p>
+  
+                    </div>
+                    <div class="check">
+                      <input type="checkbox" id="Check3" value="Value3" onclick="selectOnlyThis(this.id)" ><p>Other</p>
+  
+                    </div>
+                  </div>
+                  <a href="" class="black-btn">Continue</a>
+
+                </form>
+                <span><i class="fa fa-solid fa-lock"></i>All data is encrypted</span>
+
+            </div>
+            <!-- economic tab -->
+            <div class="economic text">
+              <div class="title"><h3>Economic Profile</h3> </div>
+              <div>
+                <label>What is your occupation / Field?</label><br>
+                <select>
+                  <option> Accountancy </option>
+                  <option> Admin / Secretarial</option>
+                  <option> Agriculture</option>
+                  <option> Catering / Hospitality</option>
+                  <option> Marketing / PR</option>
+                  <option>Education</option>
+                  <option>Engineering</option>
+                  <option>Financial Services</option>
+                  <option>Healthcare</option>
+                  <option>IT</option>
+                  <option>Legal</option>
+                  <option>Manufacturing</option>
+                  <option>Military</option>
+                  <option>Property / Construction</option>
+                  <option>Retail / Sales</option>
+                  <option>telecommunications</option>
+                  <option>Transport / Logistics</option>
+                  <option>Others</option>
+                </select>
+              </div>
+              <div>
+                <label>What is your employment status?</label><br>
+                  <div class="check">
+                    <input type="checkbox" id="Checks1" value="Employed-full" onclick="selectOnlyThischeck(this.id)" ><p>Employed (Full time)</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checks2" value="Self-employed" onclick="selectOnlyThischeck(this.id)" ><p>Self-employed</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checks3" value="Employed-part" onclick="selectOnlyThischeck(this.id)" ><p>Employed (Part time)</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checks4" value="Unemployed" onclick="selectOnlyThischeck(this.id)" ><p>Unemployed</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checks5" value="student" onclick="selectOnlyThischeck(this.id)" ><p>Student</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checks6" value="retired" onclick="selectOnlyThischeck(this.id)" ><p>Retired</p>
+
+                  </div>
+                
+              </div>
+              <div>
+                <label>Do you have previous trading experience?</label><br>
+                  <div class="check">
+                    <input type="checkbox" id="Check-experience1" value="year1" onclick="selectOnlyThischeckexp(this.id)" ><p>Yes, I have less than 1 year of trading experience</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-experience2" value="year1+" onclick="selectOnlyThischeckexp(this.id)" ><p>Yes, I have 1+ years of trading experience</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-experience3" value="year2+" onclick="selectOnlyThischeckexp(this.id)" ><p>Yes, I have 2+ years of trading experience</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-experience4" value="year4+" onclick="selectOnlyThischeckexp(this.id)" ><p>Yes, I have 4+ years of trading experience</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-experience5" value="year0" onclick="selectOnlyThischeckexp(this.id)" ><p>No, I have no trading experience</p>
+
+                  </div>
+                 
+                
+              </div>
+              <div>
+                <label>What is the purpose of opening your account?</label><br>
+                  <div class="check">
+                    <input type="checkbox" id="Check-purpose1" value="investment" onclick="selectOnlyThischeckpurp(this.id)" ><p>Investment</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-purpose2" value="hedging" onclick="selectOnlyThischeckpurp(this.id)" ><p>Hedging</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-purpose3" value="speculation" onclick="selectOnlyThischeckpurp(this.id)" ><p>Speculation</p>
+
+                  </div>
+                 
+                
+              </div>
+              <div>
+                <label>What is your annual income? (closest range)</label><br>
+                  <div class="check">
+                    <input type="checkbox" id="Check-income1" value="income-range-1" onclick="selectOnlyThischeckincome(this.id)" ><p>$100,000 - $200,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-income2" value="income-range-2" onclick="selectOnlyThischeckincome(this.id)" ><p>$50,000 - $100,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-income3" value="income-range-3" onclick="selectOnlyThischeckincome(this.id)" ><p>$20,000 - $50,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-income4" value="income-range-4" onclick="selectOnlyThischeckincome(this.id)" ><p>More than $200,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-income5" value="income-range-5" onclick="selectOnlyThischeckincome(this.id)" ><p>$0 - $20,000</p>
+
+                  </div>
+                 
+                
+              </div>
+              <div>
+                  <label>What is your total wealth? (Cash + Bank balances)</label><br>
+                  <div class="check">
+                    <input type="checkbox" id="Check-balance1" value="balance-range-1" onclick="selectOnlyThischeckbalance(this.id)" ><p>$100,000 - $200,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-balance2" value="balance-range-2" onclick="selectOnlyThischeckbalance(this.id)" ><p>$50,000 - $100,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-balance3" value="balance-range-3" onclick="selectOnlyThischeckbalance(this.id)" ><p>$20,000 - $50,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-balance4" value="balance-range-4" onclick="selectOnlyThischeckbalance(this.id)" ><p>More than $200,000</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Check-balance5" value="balance-range-5" onclick="selectOnlyThischeckbalance(this.id)" ><p>$0 - $20,000</p>
+
+                  </div>
+                 
+                
+              </div>
+              <div>
+                <label>What is your source of income? (Can select multiples)</label><br>
+                <div class="check">
+                  <input type="checkbox"  value="savings"><p>Savings</p>
+
+                </div>
+                <div class="check">
+                  <input type="checkbox"  value="employment"><p>Employment / business proceeds</p>
+
+                </div>
+                <div class="check">
+                  <input type="checkbox"  value="rent"><p>Rent</p>
+ 
+                </div>
+                <div class="check">
+                  <input type="checkbox"  value="inheritance"><p>Inheritance</p>
+
+                </div>
+                <div class="check">
+                  <input type="checkbox"  value="loan"><p>Borrowed funds / loan</p>
+
+                </div>
+                <div class="check">
+                  <input type="checkbox"  value="pension"><p>Pension</p>
+
+                </div>
+               
+              
+              </div>
+              
+              <a href="" class="black-btn">Continue</a>
+              <span><i class="fa fa-solid fa-lock"></i>All data is encrypted</span>
+              
+                
+                
+            </div>
+            <div class="verify text">
+              <div class="title"><h3>Verify Documents</h3></div>
+              <form>
+                <div>
+                  <label>1. Select your country</label>
+                  <select>
+                    <option value="AF">Afghanistan</option>
+                    <option value="AX">Åland Islands</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AQ">Antarctica</option>
+                    <option value="AG">Antigua and Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="BS">Bahamas</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="BB">Barbados</option>
+                    <option value="BY">Belarus</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BZ">Belize</option>
+                    <option value="BJ">Benin</option>
+                    <option value="BM">Bermuda</option>
+                    <option value="BT">Bhutan</option>
+                    <option value="BO">Bolivia, Plurinational State of</option>
+                    <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                    <option value="BA">Bosnia and Herzegovina</option>
+                    <option value="BW">Botswana</option>
+                    <option value="BV">Bouvet Island</option>
+                    <option value="BR">Brazil</option>
+                    <option value="IO">British Indian Ocean Territory</option>
+                    <option value="BN">Brunei Darussalam</option>
+                    <option value="BG">Bulgaria</option>
+                    <option value="BF">Burkina Faso</option>
+                    <option value="BI">Burundi</option>
+                    <option value="KH">Cambodia</option>
+                    <option value="CM">Cameroon</option>
+                    <option value="CA">Canada</option>
+                    <option value="CV">Cape Verde</option>
+                    <option value="KY">Cayman Islands</option>
+                    <option value="CF">Central African Republic</option>
+                    <option value="TD">Chad</option>
+                    <option value="CL">Chile</option>
+                    <option value="CN">China</option>
+                    <option value="CX">Christmas Island</option>
+                    <option value="CC">Cocos (Keeling) Islands</option>
+                    <option value="CO">Colombia</option>
+                    <option value="KM">Comoros</option>
+                    <option value="CG">Congo</option>
+                    <option value="CD">Congo, the Democratic Republic of the</option>
+                    <option value="CK">Cook Islands</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CI">Côte d'Ivoire</option>
+                    <option value="HR">Croatia</option>
+                    <option value="CU">Cuba</option>
+                    <option value="CW">Curaçao</option>
+                    <option value="CY">Cyprus</option>
+                    <option value="CZ">Czech Republic</option>
+                    <option value="DK">Denmark</option>
+                    <option value="DJ">Djibouti</option>
+                    <option value="DM">Dominica</option>
+                    <option value="DO">Dominican Republic</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="EG">Egypt</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GQ">Equatorial Guinea</option>
+                    <option value="ER">Eritrea</option>
+                    <option value="EE">Estonia</option>
+                    <option value="ET">Ethiopia</option>
+                    <option value="FK">Falkland Islands (Malvinas)</option>
+                    <option value="FO">Faroe Islands</option>
+                    <option value="FJ">Fiji</option>
+                    <option value="FI">Finland</option>
+                    <option value="FR">France</option>
+                    <option value="GF">French Guiana</option>
+                    <option value="PF">French Polynesia</option>
+                    <option value="TF">French Southern Territories</option>
+                    <option value="GA">Gabon</option>
+                    <option value="GM">Gambia</option>
+                    <option value="GE">Georgia</option>
+                    <option value="DE">Germany</option>
+                    <option value="GH">Ghana</option>
+                    <option value="GI">Gibraltar</option>
+                    <option value="GR">Greece</option>
+                    <option value="GL">Greenland</option>
+                    <option value="GD">Grenada</option>
+                    <option value="GP">Guadeloupe</option>
+                    <option value="GU">Guam</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="GG">Guernsey</option>
+                    <option value="GN">Guinea</option>
+                    <option value="GW">Guinea-Bissau</option>
+                    <option value="GY">Guyana</option>
+                    <option value="HT">Haiti</option>
+                    <option value="HM">Heard Island and McDonald Islands</option>
+                    <option value="VA">Holy See (Vatican City State)</option>
+                    <option value="HN">Honduras</option>
+                    <option value="HK">Hong Kong</option>
+                    <option value="HU">Hungary</option>
+                    <option value="IS">Iceland</option>
+                    <option value="IN" selected>India</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="IR">Iran, Islamic Republic of</option>
+                    <option value="IQ">Iraq</option>
+                    <option value="IE">Ireland</option>
+                    <option value="IM">Isle of Man</option>
+                    <option value="IL">Israel</option>
+                    <option value="IT">Italy</option>
+                    <option value="JM">Jamaica</option>
+                    <option value="JP">Japan</option>
+                    <option value="JE">Jersey</option>
+                    <option value="JO">Jordan</option>
+                    <option value="KZ">Kazakhstan</option>
+                    <option value="KE">Kenya</option>
+                    <option value="KI">Kiribati</option>
+                    <option value="KP">Korea, Democratic People's Republic of</option>
+                    <option value="KR">Korea, Republic of</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="KG">Kyrgyzstan</option>
+                    <option value="LA">Lao People's Democratic Republic</option>
+                    <option value="LV">Latvia</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="LS">Lesotho</option>
+                    <option value="LR">Liberia</option>
+                    <option value="LY">Libya</option>
+                    <option value="LI">Liechtenstein</option>
+                    <option value="LT">Lithuania</option>
+                    <option value="LU">Luxembourg</option>
+                    <option value="MO">Macao</option>
+                    <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                    <option value="MG">Madagascar</option>
+                    <option value="MW">Malawi</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="MV">Maldives</option>
+                    <option value="ML">Mali</option>
+                    <option value="MT">Malta</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MQ">Martinique</option>
+                    <option value="MR">Mauritania</option>
+                    <option value="MU">Mauritius</option>
+                    <option value="YT">Mayotte</option>
+                    <option value="MX">Mexico</option>
+                    <option value="FM">Micronesia, Federated States of</option>
+                    <option value="MD">Moldova, Republic of</option>
+                    <option value="MC">Monaco</option>
+                    <option value="MN">Mongolia</option>
+                    <option value="ME">Montenegro</option>
+                    <option value="MS">Montserrat</option>
+                    <option value="MA">Morocco</option>
+                    <option value="MZ">Mozambique</option>
+                    <option value="MM">Myanmar</option>
+                    <option value="NA">Namibia</option>
+                    <option value="NR">Nauru</option>
+                    <option value="NP">Nepal</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="NC">New Caledonia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="NE">Niger</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="NU">Niue</option>
+                    <option value="NF">Norfolk Island</option>
+                    <option value="MP">Northern Mariana Islands</option>
+                    <option value="NO">Norway</option>
+                    <option value="OM">Oman</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="PW">Palau</option>
+                    <option value="PS">Palestinian Territory, Occupied</option>
+                    <option value="PA">Panama</option>
+                    <option value="PG">Papua New Guinea</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Peru</option>
+                    <option value="PH">Philippines</option>
+                    <option value="PN">Pitcairn</option>
+                    <option value="PL">Poland</option>
+                    <option value="PT">Portugal</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="QA">Qatar</option>
+                    <option value="RE">Réunion</option>
+                    <option value="RO">Romania</option>
+                    <option value="RU">Russian Federation</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="BL">Saint Barthélemy</option>
+                    <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                    <option value="KN">Saint Kitts and Nevis</option>
+                    <option value="LC">Saint Lucia</option>
+                    <option value="MF">Saint Martin (French part)</option>
+                    <option value="PM">Saint Pierre and Miquelon</option>
+                    <option value="VC">Saint Vincent and the Grenadines</option>
+                    <option value="WS">Samoa</option>
+                    <option value="SM">San Marino</option>
+                    <option value="ST">Sao Tome and Principe</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="SN">Senegal</option>
+                    <option value="RS">Serbia</option>
+                    <option value="SC">Seychelles</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="SG">Singapore</option>
+                    <option value="SX">Sint Maarten (Dutch part)</option>
+                    <option value="SK">Slovakia</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="SB">Solomon Islands</option>
+                    <option value="SO">Somalia</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="GS">South Georgia and the South Sandwich Islands</option>
+                    <option value="SS">South Sudan</option>
+                    <option value="ES">Spain</option>
+                    <option value="LK">Sri Lanka</option>
+                    <option value="SD">Sudan</option>
+                    <option value="SR">Suriname</option>
+                    <option value="SJ">Svalbard and Jan Mayen</option>
+                    <option value="SZ">Swaziland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SY">Syrian Arab Republic</option>
+                    <option value="TW">Taiwan, Province of China</option>
+                    <option value="TJ">Tajikistan</option>
+                    <option value="TZ">Tanzania, United Republic of</option>
+                    <option value="TH">Thailand</option>
+                    <option value="TL">Timor-Leste</option>
+                    <option value="TG">Togo</option>
+                    <option value="TK">Tokelau</option>
+                    <option value="TO">Tonga</option>
+                    <option value="TT">Trinidad and Tobago</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="TR">Turkey</option>
+                    <option value="TM">Turkmenistan</option>
+                    <option value="TC">Turks and Caicos Islands</option>
+                    <option value="TV">Tuvalu</option>
+                    <option value="UG">Uganda</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="US">United States</option>
+                    <option value="UM">United States Minor Outlying Islands</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="UZ">Uzbekistan</option>
+                    <option value="VU">Vanuatu</option>
+                    <option value="VE">Venezuela, Bolivarian Republic of</option>
+                    <option value="VN">Viet Nam</option>
+                    <option value="VG">Virgin Islands, British</option>
+                    <option value="VI">Virgin Islands, U.S.</option>
+                    <option value="WF">Wallis and Futuna</option>
+                    <option value="EH">Western Sahara</option>
+                    <option value="YE">Yemen</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ZW">Zimbabwe</option>
+                  </select>
+                
+                </div>
+                
+                <div>
+                  <label>2. Select your Identity document</label>
+                  <div class="check">
+                    <input type="checkbox" id="Checkdoc1" value="passport" onclick="selectOnlyThisdoc(this.id)" ><p>Passport (main page)</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checkdoc2" value="pan" onclick="selectOnlyThisdoc(this.id)" ><p>Permanent Account Number (PAN) card (front)</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checkdoc3" value="license" onclick="selectOnlyThisdoc(this.id)" ><p>Driver's License (front and back)</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checkdoc4" value="Adhaar" onclick="selectOnlyThisdoc(this.id)" ><p>Aadhaar card(front and back)</p>
+
+                  </div>
+                  <div class="check">
+                    <input type="checkbox" id="Checkdoc5" value="Voter" onclick="selectOnlyThisdoc(this.id)" ><p>Voter Id card (front and back)</p>
+
+                  </div>
+                </div>
+                <div>
+                  <label>3. Take photo of your Identity document</label>
+                  <div class="do-dont">
+                    <div><img src="/images/driving-licence-do.svg"></div>
+                    <div><img src="/images/driving-licence-dont.svg"></div>
+                    <div>
+                      <h4 class="do">Do</h4>
+                      <ul>
+                        <li>Photo is clear and sharp</li>
+                        <li>Details can be read clearly</li>
+                        <li>High or good photo quality</li>
+                        <li>All 4 corners of the document are visible</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="dont">Don't</h4>
+                      <ul>
+                        <li>Photo is blurry and not focused</li>
+                        <li>Details can be read clearly</li>
+                        <li>Poor photo quality (too dark or bright)</li>
+                        <li>Not all corners are visible</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div class="upload-btn-wrapper">
+                        <button class="btn-upld"><i class="fa-regular fa-cloud-arrow-up"></i><br>Upload front of your document</button>
+                        <input type="file" name="myfile" />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="upload-btn-wrapper">
+                        <button class="btn-upld"><i class="fa-regular fa-cloud-arrow-up"></i><br>Upload back of your document</button>
+                        <input type="file" name="myfile" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="" class="black-btn">Submit</a>
+
+              </form>
+              <span><i class="fa fa-solid fa-lock"></i>All data is encrypted</span>
+
+          </div>
+            
+            
+        </div>   
+    </div>
+    </section>
+    <section id="details-web">
+        <div class="details-web-cont">
+        <p>Master Capital complies with rigorous security standards, including the Payment Card Industry Data Security Standard (PCI DSS), safeguarding your financial privacy.
+
+        </p> 
+        <p> The provided information does not constitute investment advice or solicitation, and services are not available to residents of specific jurisdictions, including Europe, the United Kingdom, the USA, and others.
+        </p>
+          
+        <p> The content on this website is copyrighted and may not be copied without the express written permission of Master Capital.
+            </p>
+        <p>Master Capital's commitment extends to adhering to regulatory standards set by governing bodies, ensuring transparency and your financial security.
+        </p>
+       
+        </div>
+        <div class="details-web-privacy">
+          <div>
+            <p>©2023. MT5</p>
+          </div>
+          <div>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+	
+
+		 
+  </main>
+
+
+  <script>
+    function selectOnlyThis(id) {
+    for (var i = 1;i <= 4; i++){
+        if ("Check" + i === id && document.getElementById("Check" + i).checked === true){
+            document.getElementById("Check" + i).checked = true;
+            } else {
+              document.getElementById("Check" + i).checked = false;
+            }
+    }  
+}
+function selectOnlyThischeck(id) {
+    for (var i = 1;i <= 6; i++){
+        if ("Checks" + i === id && document.getElementById("Checks" + i).checked === true){
+            document.getElementById("Checks" + i).checked = true;
+            } else {
+              document.getElementById("Checks" + i).checked = false;
+            }
+    }  
+}
+function selectOnlyThischeckexp(id) {
+    for (var i = 1;i <= 5; i++){
+        if ("Check-experience" + i === id && document.getElementById("Check-experience" + i).checked === true){
+            document.getElementById("Check-experience" + i).checked = true;
+            } else {
+              document.getElementById("Check-experience" + i).checked = false;
+            }
+    }  
+}
+function selectOnlyThischeckpurp(id) {
+    for (var i = 1;i <= 3; i++){
+        if ("Check-purpose" + i === id && document.getElementById("Check-purpose" + i).checked === true){
+            document.getElementById("Check-purpose" + i).checked = true;
+            } else {
+              document.getElementById("Check-purpose" + i).checked = false;
+            }
+    }  
+}
+function selectOnlyThischeckincome(id) {
+    for (var i = 1;i <= 5; i++){
+        if ("Check-income" + i === id && document.getElementById("Check-income" + i).checked === true){
+            document.getElementById("Check-income" + i).checked = true;
+            } else {
+              document.getElementById("Check-income" + i).checked = false;
+            }
+    }  
+}
+function selectOnlyThischeckbalance(id) {
+    for (var i = 1;i <= 5; i++){
+        if ("Check-balance" + i === id && document.getElementById("Check-balance" + i).checked === true){
+            document.getElementById("Check-balance" + i).checked = true;
+            } else {
+              document.getElementById("Check-balance" + i).checked = false;
+            }
+    }  
+}
+function selectOnlyThischeckdoc(id) {
+    for (var i = 1;i <= 5; i++){
+        if ("Checkdoc" + i === id && document.getElementById("Checkdoc" + i).checked === true){
+            document.getElementById("Checkdoc" + i).checked = true;
+            } else {
+              document.getElementById("Checkdoc" + i).checked = false;
+            }
+    }  
+}
+  </script>
+
+  </body>
+  </html>
+      

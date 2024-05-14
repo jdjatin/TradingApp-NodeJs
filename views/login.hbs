@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MT5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+	  <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+
+  </head>
+
+<body>
+
+  <header class="header">
+    <nav>
+      <div class="logo"><img src="/images/animated_logo.gif"></a>
+      </div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <ul class="menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Trading</a></li>
+        <li><a href="#">Platforms</a></li>
+        <li><a href="#">Tools</a></li>
+        <li><a href="#" class="black-btn white-br-btn">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+    <main class="form-main">
+      <section id="signup-section">
+        <div class="title"><h2>Welcome to <span>MT5</span></h2></div>
+       
+        
+         <div class="signup">
+          <div class="form-tab">
+            <button class="form-tab-btn">SignIn</button>
+          </div>
+          
+          <div id="signin" class="form-page">
+            <div class="blue-line"></div>
+           <form action="/api/auth/login" method="POST">
+              <div>
+                  <label>Enter Your Email address</label>
+                  <input type="email" name="email">
+              </div>
+              <div>
+                  <label>Enter Password</label>
+                  <input type="password" name="password">
+              </div>
+              <div>
+                  <input type="submit" value="Submit">
+              </div>
+              <div>
+                  <a href="">I forgot my password</a>
+              </div>
+          </form>
+          </div>
+          
+         
+          
+
+         </div>
+      </section>
+      <section id="details-web">
+        <div class="details-web-cont">
+        <p>Master Capital complies with rigorous security standards, including the Payment Card Industry Data Security Standard (PCI DSS), safeguarding your financial privacy.
+
+        </p> 
+        <p> The provided information does not constitute investment advice or solicitation, and services are not available to residents of specific jurisdictions, including Europe, the United Kingdom, the USA, and others.
+        </p>
+          
+        <p> The content on this website is copyrighted and may not be copied without the express written permission of Master Capital.
+            </p>
+        <p>Master Capital's commitment extends to adhering to regulatory standards set by governing bodies, ensuring transparency and your financial security.
+        </p>
+       
+        </div>
+        <div class="details-web-privacy">
+          <div>
+            <p>©2023. MT5</p>
+          </div>
+          <div>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+        
+		
+	
+			 
+  </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.querySelector('form[action="/api/auth/login"]');
+        
+        if (loginForm) {
+            loginForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent form submission
+
+                const formData = new FormData(loginForm);
+                const token = '{{data.token}}'
+
+                try {
+                    const response = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams(formData),
+                    });
+
+                    if (response.ok) {
+                        // Redirect to dashboard upon successful login
+                        window.location.href = '/api/payment/dashboard';
+                    } else {
+                        console.error('API request failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    });
+</script>
+
+    </body>
+    </html>
+      

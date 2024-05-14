@@ -1,0 +1,56 @@
+name: Deploy NestJS App
+
+on:
+  push:
+    branches:
+      - main # Change this to the appropriate branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SSH key
+      uses: webfactory/ssh-agent@v0.5.2
+      with:
+        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+    - name: SSH into server and run git pull
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        # port: ${{ secrets.SERVER_PORT }}  # Uncomment if needed
+        script: |
+          cd /var/www/MT5
+          git add .
+          git commit -m "server commit"
+          
+          # Attempt to pull, but ignore any errors
+          sudo git pull https://JatinDJD:${{ secrets.GIT_PAT }}@github.com/JatinDjd/MT5.git main || true
+          
+          git add .
+          git commit -m "server commit"
+          
+          # Attempt to pull, but ignore any errors
+          sudo git pull https://JatinDJD:${{ secrets.GIT_PAT }}@github.com/JatinDjd/MT5.git main || true
+          
+          # Push changes to the repository
+          git add .
+          git commit -m "server commit"
+          sudo git push origin main
+          
+          # Pull again to ensure the latest changes are synced
+          git add .
+          git commit -m "server commit"
+          sudo git pull https://JatinDJD:${{ secrets.GIT_PAT }}@github.com/JatinDjd/MT5.git main
+          
+          sudo rm -r dist
+          npm install --force
+          npm run build
+          pm2 restart app
+          

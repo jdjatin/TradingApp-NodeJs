@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MT5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+	  <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+
+  </head>
+
+<body>
+
+    <header class="header">
+      <nav>
+        <div class="logo"><img src=""></a>
+        </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Trading</a></li>
+          <li><a href="#">Platforms</a></li>
+          <li><a href="#">Tools</a></li>
+          <li><a href="/api/auth/login-page" class="black-btn white-br-btn">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="form-main">
+      <section id="signup-section">
+        <div class="title"><h2>Welcome to <span>MT5</span></h2></div>
+       
+        
+         <div class="signup">
+          <div class="form-tab">
+            <button class="form-tab-btn">Create Account</button>
+          </div>
+          
+          
+          <div id="createaccount" class="form-page" >
+            <div class="blue-line"></div>
+            <form id="signupForm" action="/api/auth/register" method="post">
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="email">Your email address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <ul>
+                    <li>Use from 8 to 15 characters</li>
+                    <li>Use both uppercase and lowercase letters</li>
+                    <li>Use a combination of numbers and English letters</li>
+                </ul>
+            </div>
+            <div class="check-input">
+                <input type="checkbox" id="taxDeclaration" name="taxDeclaration" required>
+                I declare and confirm that I am not a citizen or resident of the US for tax purposes.
+            </div>
+            <div>
+                <input type="submit" value="Continue">
+            </div>
+        </form>
+
+            <div id="responseMessage"></div>
+
+
+          </div>
+          
+
+         </div>
+      </section>
+      <section id="details-web">
+        <div class="details-web-cont">
+        <p>Master Capital complies with rigorous security standards, including the Payment Card Industry Data Security Standard (PCI DSS), safeguarding your financial privacy.
+
+        </p> 
+        <p> The provided information does not constitute investment advice or solicitation, and services are not available to residents of specific jurisdictions, including Europe, the United Kingdom, the USA, and others.
+        </p>
+          
+        <p> The content on this website is copyrighted and may not be copied without the express written permission of Master Capital.
+            </p>
+        <p>Master Capital's commitment extends to adhering to regulatory standards set by governing bodies, ensuring transparency and your financial security.
+        </p>
+       
+        </div>
+        <div class="details-web-privacy">
+          <div>
+            <p>©2023. MT5</p>
+          </div>
+          <div>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+        
+		
+	
+			 
+  </main>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const signupForm = document.getElementById('signupForm');
+        const responseMessage = document.getElementById('responseMessage'); // Define the responseMessage element
+
+          debugger;
+        signupForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent form submission
+
+            const formData = new FormData(signupForm);
+            const formDataObject = {};
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
+            });
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formDataObject),
+                });
+
+                console.log("response------------>>>>>>>", response);
+
+                if (response.ok) {
+                    const responseData =response;
+                    responseMessage.textContent = "User created successfully!! ";
+                    // Handle the response data
+                    if (response.status === 201) {
+                        // Redirect to the specified URL
+                        window.location.href = 'https://trade.masterinfotech.com/api/auth/signup-success';
+                    }
+                } else {
+                    console.error('API request failed');
+                    responseMessage.textContent = "User creation failed";
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            } 
+        });
+    });
+</script>
+
+ 
+    </body>
+    </html>
+      

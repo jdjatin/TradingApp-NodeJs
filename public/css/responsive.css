@@ -1,0 +1,655 @@
+
+
+* {
+    font-family: 'Poppins';
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+ /* RESPONSIVE CSS */
+ @media only screen and (max-width: 767px){
+    :root {
+        --main-pad: 0rem 1rem;
+    }
+    h1{
+        font-size:40px;}
+    h2{
+       font-size: 26px;}
+    h3{
+        font-size:18px; }
+    h4{
+        font-size:16px;}
+    p{
+       font-size: 14px;  }
+    .title p {
+        font-size: 16px;
+    }
+  
+    .title {  width: 96%;   margin: 0 auto;}
+    .logo img {
+        width: 30px;
+    }
+    #web-page h1 {font-size: 28px;line-height: 1.4;}
+    #build ,#web-design,#development,#call { padding-top: 2rem; padding-bottom: 2rem;}
+    .title h2,.build-comp h2 ,#call h2{ font-size:28px;line-height:1.2;  }
+    .ban-file {padding-top: 03rem !important;flex-direction: column !important;}
+    #banner-head .left-side, .web-cont{padding: 0rem; }
+    .build-comp div p { font-size: 14px; }
+    #call{margin-top:2rem;}
+    .dev-card>div:last-child{ padding: 1rem;}
+    #business-serv,.build-comp{padding-bottom: 0rem;}
+   .dev-card h4,#call p{font-size: 14px;}
+   .dev-no p{font-size: 12px;}
+    .dev-no{padding:10px;}
+    .left-side p{width:100%;}
+    .title h2, #banner-head .left-side , .build-comp .build-cont ,.dev-cont>div:first-child ,.dev-cont>div:last-child,.dev-no {width: 100%;}
+    #execution{padding-top:2rem;padding-bottom:2rem;}
+    .business-serv { row-gap: 1rem;padding:0rem 0rem 3rem;}
+    .dev-cont ,#business-serv {padding-top: 0rem;}
+    .left-side p ,.card-box h4{ font-size:18px;  }
+    .left-side p { padding:1rem 0rem;}
+    .iner-box .line,.web-cont img,  .dev-cont>div img {display:none;}
+    #execution .accounts:nth-child(3){  padding-bottom:2rem;}
+    .build-comp ,.ban-file,.web-cont,.web-elements,.dev-cont{display: block;}
+    .card-box {margin-bottom:2rem;}
+
+    .dev-card { margin-bottom: 1rem; }
+
+    #banner-head {
+        height: auto;padding: 0rem 0px 3rem;}
+    .build-comp h4 {
+        font-size: 18px;
+        padding:  1rem 0rem 0rem;}    
+    .numbers-ex p {
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+    .numbers-ex h2 {
+        font-size: 24px;
+        line-height: 1.3;
+        padding: 1rem 0rem;
+    }
+    .dev-cont>div:last-child {
+        padding-top:2rem;
+    }
+    .instant p{font-size:14px;margin-bottom:0rem;}
+    .instant h2{font-size:20px;padding:1rem 0rem 0rem;}
+    .exec p{margin-bottom:1rem;font-size:14px;padding:5px 0px;}
+    .exec{padding:1rem 1rem 2rem ;flex-wrap:wrap;}
+    .exec .instant{width:100%;}
+    .accounts .instant,.instant-sec ,.with-sec{width:100%;}
+    .with-sec{flex-wrap:wrap;}
+    .accounts .instant img {
+        display:none;}
+    .accounts{padding:1rem;flex-wrap:wrap;}
+    .instant-sec p{font-size:14px;}    
+    .instant-sec h2 {
+        font-size: 20px;
+        padding: 1rem 0rem;
+    }
+    .build-comp .build-cont {
+        margin-bottom:1rem;}
+    .black-btn{font-size:12px;}   
+    #dashboard{padding-bottom:0rem;}
+    .details-web-cont{padding-bottom:2rem;}
+    .std-list>div {
+        width: 100%;
+    }
+    .instant h4 {
+        font-size: 18px;
+        padding: 0.2rem 0rem;
+    }
+    .std-list {
+        flex-wrap: wrap;
+    }
+    .instant-sec {
+        text-align: center;
+    }
+    /* signup form */
+    
+    #signup-section{padding:var(--main-pad);}
+    .form-main {
+        padding-top: 0rem;
+    }
+  
+    #details-web {
+        width: auto;
+        margin: 0;
+        padding:var(--main-pad);
+        padding-top:2rem;
+        padding-bottom:2rem;
+    }
+
+    .signup{padding:1rem;width:auto;margin:0;}
+         /* dashboard */
+    .type-box{flex-wrap:wrap;}
+    .content .text-content{padding:1rem;}
+    .real-btns ul{column-gap:1rem;}
+    .content .text .title {
+        margin:0;}
+    .real-btns li {
+        margin-bottom: 0rem;
+    }
+    .real-data h3 {
+        padding: 1rem 0rem 01rem;
+    }
+    .content .list {
+        flex-wrap: wrap;
+        justify-content: start;
+        column-gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .content .list label {
+        font-size: 12px;padding-left:0rem;width:30%;}
+    .content .list label span{column-gap:5px;    padding-left: 5px;}
+    .content{padding:0rem;}
+    .type-btn{padding:0.4rem 1rem 0.4rem 0rem;font-size:12px;}
+    .content .slider{width:110px;top: -10px;
+        height: 40px;}
+    .deposit-card {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    .deposit-card i {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .deposit-card ul {
+        padding:  0rem;
+       
+    }
+    .deposit-card ul li{font-size:12px;}
+    .deposit-card>div:nth-child(2){width:52%;}
+    .deposit-hd {
+        border-bottom: 0px solid #f5f5f5;
+        width: 45%;
+    }
+    .deposit-cont{padding-bottom:2rem;}
+    .text-content .black-btn{font-size:12px;    padding: 5px 10px;}
+    .real-data ul li {        font-size: 12px;    }
+    #deposit:checked ~ .list .slider{
+        left: 110px;
+    }
+      
+    #withdrawl:checked ~ .list .slider{
+        left: 240px;
+    }
+      
+    #history:checked ~ .list .slider{
+        top:25px;
+        left:0;
+    }
+      
+      
+    #settings:checked ~ .list .slider{
+        top:25px;
+        left: 110px;
+    }
+    #Demo .blue-line { margin-left: 15%;}
+    .type .blue-line{width:12%;}
+    .deposit-card i {
+        margin-top: -2rem;
+    }
+    .deposit-sec h4 {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+    .history-options {
+        column-gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .history-options select {
+        font-size: 12px;
+        margin-bottom:1rem;
+        width:45%;
+    }
+    .no-history{padding:1rem 0rem;}
+    .no-history h3 {
+        font-size: 16px;
+    }
+    .no-history h3,.no-history p {
+        padding:0rem 0rem 0.5rem;
+    }
+    .settings-part td {
+        width: 100%;
+        display: block;
+        padding:8px;
+    }
+    .settings .blue-line {
+        margin-top: -2.2rem;
+    }
+    #security .blue-line {
+        margin-left: 15%;
+        width: 25%;
+    }
+    #conditions .blue-line {
+        margin-left: 0%;
+        margin-top: 0;
+        width:28%;
+    }
+    #terminals .blue-line {
+        margin-left: 45%;
+        width: 28%;
+    }
+    
+    .settings-part {
+        padding: 1rem 0rem;
+    }
+    .title h3 {
+        font-size: 20px;
+    }
+    #details-web .details-web-cont p:first-child, #details-web .details-web-cont p:nth-child(2) {
+        font-size: 14px;
+    }
+    .settings-hd p {
+        padding-bottom: 1rem;
+    }
+    /* profile page steps*/
+
+    #complete-profile .content {
+        display: block;padding:0rem;}
+    .content .profile-list {
+        width: 100%;
+        flex-direction: row;}
+    #complete-profile .content .text-content {
+        width: 100%;
+        padding: 1rem ;
+    }
+    #complete-profile .content .text-content .phone>div a, #complete-profile .information form a, #complete-profile .email a {
+        margin: 1rem 0rem;
+        float: none;
+    }
+    #complete-profile .text p , #complete-profile .text label{
+        font-size: 14px;
+    }
+    #complete-profile .text span {
+        right: 1rem;
+    }
+    #complete-profile .content .text-content input {
+        width: 100%;}
+    .btn-upld i {
+        font-size: 30px;
+    }
+    .btn-upld {
+        font-size: 12px;}
+    #complete-profile .economic a, #complete-profile .verify a {
+        float: none; 
+    }
+    /* pooja css  history tab*/
+    #Transaction .blue-line { width: 120px!important;}
+    #Order .blue-line { margin-left: 33%!important; }
+    #Order .blue-line {    width: 95px!important;}
+ }
+ @media only screen and (min-width: 768px) and (max-width: 1023px){
+	  :root { --main-pad: 0rem 2rem;
+	}
+    h1{
+        font-size:60px;
+    }
+    h2{
+       font-size: 26px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    h4{
+        font-size:16px;
+    }
+    p{
+      font-size: 14px;
+    }
+    
+    .title p{font-size:16px;}
+    #banner-head {
+        padding: 0rem 0px 0px;
+    }
+	#banner-head .left-side {padding: 0px ;}
+	#web-page h1 {font-size: 40px;line-height: 1.4;}
+	.left-side p {font-size: 18px;line-height: 1.4;padding: 1rem 0px 2rem;}	
+	.left-side a, .build-comp div a, #call a{	font-size: 14px;width: 150px;  padding: 6px 3px;}	
+	.title h2 {	width: 100%;	font-size: 32px;	line-height: 1.3;}
+	.business-serv {padding: 1rem 0rem 3rem;row-gap: 2rem;column-gap: 1.6rem;}
+	#business-serv {padding-top: 4rem;	padding-bottom: 3rem;}
+	.build-comp h2 ,#call h2 { font-size: 42px;}
+	.build-comp p { padding: 1rem 0rem 2rem; font-size: 16px;}
+
+	#call { padding-top: 5rem;  padding-bottom: 5rem;}
+	#development {  padding-top: 4rem;  padding-bottom: 04rem;}
+	.dev-card h4 {font-size: 20px;     margin: 0px;}
+	.dev-cont>div {  width: 31%;}
+	.dev-cont { padding-top: 2rem;}
+    .build-comp .build-gif {
+        width: 48%;}
+   .dev-card>div:last-child { padding: 1rem;}
+    #banner-head {      height: auto;}
+    .build-comp {
+        padding: 0rem;
+    }
+    .build-comp h4 {
+        font-size: 24px;}
+    .with-sec {
+        width: 40%;
+        flex-wrap: wrap;
+    }
+    .build-comp .build-cont {
+        width: 30%;}
+    #banner-head .left-side {
+        padding: 0rem 0rem 4rem;
+    }
+    .accounts .instant{width:100%;}
+    .accounts .instant img {
+        display:none;}
+    .dev-card h4 {font-size: 16px;     margin: 0px;}
+    .numbers-ex p ,.dev-no p{
+        font-size: 16px;}
+    .numbers-ex h2 {
+        font-size: 30px;padding:0rem 0rem 1rem;}
+    .exec .instant {
+        width: 40%;
+    }  
+    .exec  {
+        padding:2rem 0rem;
+    }    
+    .accounts .instant p {margin-bottom:0rem;}
+    #build,#execution{padding-top:3rem;}
+    .accounts {
+        padding: 2rem;display:block;}
+    .dev-no{width:95%;padding:5px 10px ;}  
+
+     /* signup-form page*/
+    #details-web {
+        width: auto;
+        margin: 0;
+        padding:var(--main-pad);
+        padding-top:4rem;
+        padding-bottom:4rem;
+    }
+    .signup{padding:2rem;width:600px;}
+    /* dashboard page*/
+    #complete-profile .content {
+        padding: 0;}
+    .content .list label {font-size: 14px;padding-left:5px;}
+    .content .list label span{column-gap:5px;}
+    .content{padding:0rem;}
+    .type-btn{padding:0.4rem 1rem 0.4rem 0rem;font-size:13px;}
+    .content .slider{width:140px;}
+    .deposit-card{width:32%;}
+    .text-content .black-btn{font-size:12px;    padding: 5px 10px;}
+    .real-data ul li {        font-size: 12px;    }
+    #deposit:checked ~ .list .slider{
+        left: 150px;
+    }
+      
+    #withdrawl:checked ~ .list .slider{
+        left: 280px;
+    }
+      
+    #history:checked ~ .list .slider{
+        left: 430px;
+    }     
+    #settings:checked ~ .list .slider{
+        left: 550px;
+    }
+    #security .blue-line {
+        margin-left: 10%;
+    }
+    #terminals .blue-line {
+        margin-left: 25%;
+    }
+    #conditions .blue-line {
+        margin-left: 42%;
+    }
+    /* pooja css  history tab*/
+    #Transaction .blue-line { width: 130px!important;}
+    #Order .blue-line { margin-left: 18%!important; }
+    #Order .blue-line {    width: 100px !important;}
+
+ 
+} 
+ @media only screen and (min-width: 1024px) and (max-width: 1200px){
+	 :root {
+    --main-pad: 0rem 6rem;
+	}
+    h1{
+        font-size:60px;
+     }
+    h2{
+       font-size: 32px;
+    }
+    h3{
+        font-size:18px;
+    }
+    h4{
+        font-size:16px;
+    }
+    p{
+      font-size: 14px;
+    }
+
+    .title p{font-size:16px;}
+    .build-comp>div{ width:50%; }
+    #banner-head {
+        padding: 0rem 0px 0px;
+    }
+	.ban-file {  display:flex;}
+	#web-page h1 {font-size: 38px;line-height: 1.4;}
+	.left-side p {font-size: 18px;padding: 1rem 0px 2rem;}
+    .dev-card>div:last-child { padding: 1rem;  }
+	.left-side a, .build-comp div a, #call a{	font-size: 16px;width: 150px;     padding: 6px 3px;}	
+	.title h2 {font-size: 34px;	line-height: 1.3;}
+	.business-serv {padding: 1rem 0rem 3rem;row-gap: 2rem;column-gap: 1.6rem;}
+	#business-serv {padding-top: 4rem;	padding-bottom: 3rem;}
+	.build-comp h2 ,#call h2 { font-size: 42px;}
+	.build-comp p { padding: 1rem 0rem 1rem; font-size: 14px;}
+	#call { padding-top: 5rem;  padding-bottom: 5rem;}
+	#development {  padding-top: 4rem;  padding-bottom: 4rem;}	
+	.dev-cont>div {  width: 31%;}
+	.dev-cont { padding-top: 2rem;}
+	
+    .build-comp {
+        padding: 0rem;
+    }
+    .build-comp h4 {
+        font-size: 24px;}
+    .with-sec {
+        width: 40%;
+        flex-wrap: wrap;
+    }
+    #banner-head .left-side {
+        padding: 02rem 0rem 0rem;
+    }
+    .accounts .instant{width:100%;}
+    .accounts .instant img {
+        display:none;}
+    .dev-card h4 {font-size: 16px;     margin: 0px;}
+    .numbers-ex p ,.dev-no p{
+        font-size: 16px;}
+    .numbers-ex h2 {
+        font-size: 30px;}
+    .exec .instant {
+        width: 45%;
+    }  
+    .exec  {
+        padding:2rem 0rem;
+    }    
+    .accounts .instant p {margin-bottom:0rem;}
+    #build,#execution{padding-top:3rem;}
+    .accounts {
+        padding: 2rem;display:block;}
+    .dev-no{width:90%;}  
+    /* signup-form  page*/
+    #details-web {
+        width: auto;
+        margin: 0;
+        padding:var(--main-pad);
+        padding-top:4rem;
+        padding-bottom:4rem;
+    }
+    .signup{padding:2rem;width:600px;}
+     /* dashboard */
+    .content .list label {
+        font-size: 14px;}
+    .content .list label span{column-gap:5px;}
+    .content{padding:0rem;}
+    #complete-profile .content {
+        padding: 0;}
+    .type-btn{padding:0.4rem 1rem;font-size:14px;}
+    .content .slider{width:150px;}
+    .deposit-card{width:32%;}
+    .text-content .black-btn{font-size:12px;    padding: 5px 10px;}
+    .real-data ul li {        font-size: 12px;    }
+    #deposit:checked ~ .list .slider{
+        left: 160px;
+    }
+      
+    #withdrawl:checked ~ .list .slider{
+        left: 310px;
+    }
+      
+    #history:checked ~ .list .slider{
+        left: 470px;
+    }     
+    #settings:checked ~ .list .slider{
+        left: 600px;
+    }
+    #security .blue-line {
+        margin-left: 10%;
+    }
+    #terminals .blue-line {
+        margin-left: 25%;
+    }
+    #conditions .blue-line {
+        margin-left: 42%;
+    }
+     /* pooja css  history tab*/
+     #Transaction .blue-line {width: 150px!important;}
+     #Order .blue-line { margin-left: 18%!important; }
+     #Order .blue-line {    width: 100px !important;}
+   
+ }
+ 
+ @media only screen and (min-width: 1201px) and (max-width: 1366px){
+	 :root {
+    --main-pad: 0rem 8rem;
+	}
+    h1{
+        font-size:70px;
+    }
+    h2{
+        font-size: 36px;
+    }
+    h3{
+        font-size:20px;
+     }
+    h4{
+        font-size:18px;
+    }
+    p{
+       font-size: 14px;
+    }
+     .title p {
+        font-size: 18px;
+    }
+
+	#web-page h1 {font-size: 48px;line-height: 1.4;}
+	.left-side p {font-size: 18px;line-height: 1.4;padding: 1rem 0px 2rem;}	
+	.left-side a, .build-comp div a, #call a{	font-size: 16px;width: 150px;     padding: 6px 3px;}	
+	.title h2 {		font-size: 40px;	line-height: 1.3;}
+	.business-serv {padding: 1rem 0rem 3rem;row-gap: 2rem;column-gap: 1.6rem;}
+	#business-serv {padding-top: 4rem;	padding-bottom: 3rem;}
+	.build-comp h2 ,#call h2{ font-size: 42px;}
+	.build-comp p { padding: 1rem 0rem 2rem; font-size: 16px;}
+	#call { padding-top: 5rem;  padding-bottom: 5rem;}
+	#development {  padding-top: 4rem;  padding-bottom: 04rem;}
+	.dev-card h4 {font-size: 20px;     margin: 0px;}
+	.dev-cont>div {  width: 31%;}
+	.dev-cont { padding-top: 2rem;}
+    .dev-card>div:last-child {padding: 1rem; }   
+    .with-sec {
+        width: 35%;
+        flex-wrap: wrap;
+    }
+    .accounts {
+        padding: 4rem 2rem;}
+    .dev-no{width:90%;}  
+    .dev-no p{font-size:20px;}  
+     /* signup-form */
+    #details-web {
+        width: auto;
+        margin: 0;
+        padding:var(--main-pad);
+        padding-top:4rem;
+        padding-bottom:4rem;
+    }
+    .signup{padding:2rem;width:600px;}
+
+     /* dashboard */
+   .type-btn{padding:0.4rem 1rem;font-size:14px}
+   .content .slider{width:180px;}
+   /* pooja css  history tab*/
+   #Transaction .blue-line {width: 155px!important;}
+   #Order .blue-line {margin-left: 13%!important;}
+   #Order .blue-line {width: 112px !important;}
+  
+ }
+ @media only screen and (min-width: 1367px) and (max-width: 1600px){
+	:root {
+    --main-pad: 0rem 8rem;
+	}
+    h1{font-size:80px;}
+    h2{font-size: 38px;}
+    h3{ font-size:22px;}
+    h4{font-size:18px;}
+    p{ font-size: 15px;}
+    .title p{font-size:18px;}
+    #banner-head{margin-bottom:0 !important;}
+	#web-page h1 {font-size: 48px;line-height: 1.4;}
+	.left-side p {font-size: 18px;line-height: 1.4;padding: 1rem 0px 2rem;}	
+	.left-side a, .build-comp div a, #call a{	font-size: 16px;width: 150px;     padding: 6px 3px;}	
+	.title h2 {	font-size: 40px;	line-height: 1.3;}
+	.business-serv {padding: 1rem 0rem 3rem;row-gap: 2rem;column-gap: 1.6rem;}
+
+	#business-serv {padding-top: 4rem;	padding-bottom: 3rem;}
+	.build-comp h2,#call h2  { font-size:42px;}
+	.build-comp p { padding: 1rem 0rem 2rem; font-size: 16px;}
+    .with-sec {
+        width: 35%;
+        flex-wrap: wrap;
+    }
+    .accounts {
+        padding: 4rem 2rem;}
+    .dev-no{width:90%;}  
+    .dev-no p{font-size:20px;}  
+	#call { padding-top: 5rem;  padding-bottom: 5rem;}
+	#development {  padding-top: 4rem; padding-bottom:04rem;}
+	.dev-card h4 {font-size: 20px;     margin: 0px;}
+	.dev-cont>div {  width: 31%;}
+	.dev-cont { padding-top: 2rem;}
+
+    #banner-head .right-side img {
+        margin-top: 02rem;}
+     /* signup-form */
+    #details-web {
+        width: auto;
+        margin: 0;
+        padding:var(--main-pad);
+        padding-top:4rem;
+        padding-bottom:4rem;
+    }
+    .signup{padding:2rem;width:600px;}
+    /* dashboard */
+   .type-btn{padding:0.4rem 1rem;    font-size: 16px;}
+   .content .slider{width:180px;}  /* pooja css  history tab*/
+   #Transaction .blue-line {width: 175px!important;}
+   #Order .blue-line {margin-left: 13%!important;}
+   #Order .blue-line {width: 135px !important;}
+
+  
+ }  
+   
